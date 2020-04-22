@@ -1,0 +1,48 @@
+.commentsList {
+    list-style: none;
+}
+
+.commentBlock {
+    font-size: 16px;
+    color: midnightblue;
+    background-color: aliceblue;
+    border: 1px solid white;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.commentBlockHeader {
+    height: 35px;
+    border-bottom: 2px solid black;
+}
+
+.authorName {
+    display: inline-block;
+}
+
+.date {
+    float: right;
+}
+
+.commentText {
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.btnCommentDel{
+    padding: 10px;
+    margin-right: 5px;
+    color: midnightblue;
+    font-size: 14px;
+    border: 2px solid white;
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    background-color: antiquewhite;
+}
+
+.btnCommentDel:hover {
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,1);
+    box-shadow: 0 0 10px rgba(0,0,0,1);
+    border: 2px solid black;
+}

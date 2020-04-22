@@ -1,0 +1,41 @@
+html {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+
+    -webkit-transition: all .1s ease;
+
+    -o-transition: all .1s ease;
+
+    transition: all .1s ease;
+
+    -webkit-box-sizing: inherit;
+
+            box-sizing: inherit;
+}
+*:before,
+*:after {
+        -webkit-box-sizing: inherit;
+                box-sizing: inherit;
+}
+
+body {
+    font-family: 'roboto', sans-serif;
+    background-color: #157; 
+}
+
+h1 {
+    font-size: 22px;
+    background-color: antiquewhite;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    text-align: center;
+    
+}
+
+
+

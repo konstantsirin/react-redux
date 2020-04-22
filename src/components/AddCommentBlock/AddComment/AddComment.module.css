@@ -1,0 +1,43 @@
+.blockAddComment {
+    background-color: antiquewhite;
+    padding: 10px;
+}
+
+.addName,
+.addComment {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.addName {
+    display: block;
+    width: 100%;
+}
+
+.addComment {
+    display: block;
+    width: 100%;
+    min-height: 100px;
+}
+
+
+.btnCommentAdd,
+.btnCommentClear {
+    padding: 10px;
+    margin-right: 5px;
+    color: midnightblue;
+    font-size: 14px;
+    border: 2px solid white;
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    background-color: aliceblue;
+}
+
+.btnCommentAdd:hover,
+.btnCommentClear:hover {
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,1);
+    box-shadow: 0 0 10px rgba(0,0,0,1);
+    border: 2px solid black;
+}
+
