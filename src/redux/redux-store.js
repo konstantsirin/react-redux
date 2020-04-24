@@ -16,7 +16,4 @@ let initialState = {
 
 let store = createStore(allReducers, initialState);
 
-window.store = store;
-window.initialState = initialState;
-
 export default store;
