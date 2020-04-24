@@ -1,7 +1,7 @@
 import React from 'react';
 import AppClasses from './App.module.css';
 
-import CommentContainer from '../components/CommentBlock/CommentsContainer.js';
+import CommentsContainer from '../components/CommentBlock/CommentsContainer.js';
 import AddCommentContainer from '../components/AddCommentBlock/AddCommentContainer.js';
 
 let App = () => {
@@ -9,7 +9,7 @@ let App = () => {
 		<section
 		className = {AppClasses.appBlock}
 		>
-			<CommentContainer />
+			<CommentsContainer />
 			<AddCommentContainer />
 		</section>
 	)

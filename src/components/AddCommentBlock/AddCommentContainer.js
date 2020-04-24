@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onAuthorChange: (newAuthor) => dispatch(updateNewAuthorActionCreator(newAuthor)),
         onTextChange: (newText) => dispatch(updateNewTextActionCreator(newText)),
-        addComment: () => dispatch(addCommentActionCreator()),
+        addComment: (newAuthor, newText) => dispatch(addCommentActionCreator(newAuthor, newText)),
         clearAddComment: () => dispatch(clearAddCommentActionCreator())
     }
 };

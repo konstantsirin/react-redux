@@ -3,31 +3,41 @@ const UPDATE_NEW_AUTHOR = 'UPDATE_NEW_AUTHOR';
 const UPDATE_NEW_TEXT = 'UPDATE_NEW_TEXT';
 const DEL_COMMENT = 'DEL_COMMENT';
 const CLEAR_ADD_COMMENT = 'CLEAR_ADD_COMMENT';
-let id = 2;
+const LOAD_STATE = 'LOAD_STATE';
 
 const commentsReducer = (state = {}, action) => {
-    console.log(action);
 
     switch (action.type) {
         case ADD_COMMENT: {
-            if (state.newAuthor.trim() && state.newText.trim() && typeof(state.newAuthor.trim()) != 'undefined' && typeof(state.newText.trim()) != 'undefined') {
-                let currentFullDate = new Date().toLocaleString();
-                let newComment = {
-                    id: id++,
-                    author: state.newAuthor,
-                    text: state.newText,
-                    dateTime: currentFullDate
-                };
-                id++;
 
-                return {
-                    ...state,
-                    comments: [...state.comments, newComment],
-                    newAuthor: '',
-                    newText: ''
-                };
+            if (action.author.trim() && action.text.trim() && typeof(action.author.trim()) != 'undefined' && typeof(action.text.trim()) != 'undefined') {
+
+                try {
+                    let newComment = {
+                        id: action.id,
+                        author: action.author,
+                        text: action.text,
+                        dateTime: action.dateTime
+                    };
+
+                    state.comments = [...state.comments, newComment];
+                    const serializedState = JSON.stringify(state.comments);
+                    localStorage.setItem('comments', serializedState);
+
+                    return {
+                        ...state,
+                        newAuthor: '',
+                        newText: ''
+                    };
+
+                } catch (err) {
+                    console.log(err);
+                    return;
+                }
+
+
+
             } else {
-                alert('Поля не заполнены');
                 console.log ('Данные не получены');
                 return {
                     ...state,
@@ -54,10 +64,13 @@ const commentsReducer = (state = {}, action) => {
         }
 
         case DEL_COMMENT : {
+            state.comments = [...state.comments.filter(comment => comment.id !== action.id)];
+            const serializedState = JSON.stringify(state.comments);
+            localStorage.setItem('comments', serializedState);
+
 
             return {
-                ...state,
-                comments: [...state.comments.filter(comment => comment.id !== action.id)]
+                ...state
             }
         }
 
@@ -69,6 +82,14 @@ const commentsReducer = (state = {}, action) => {
                 newText: ''
             };
         }
+
+        case LOAD_STATE : {
+            return {
+                ...state,
+                comments: action.comments
+            }
+        }
+
         default :
             return state;
     }

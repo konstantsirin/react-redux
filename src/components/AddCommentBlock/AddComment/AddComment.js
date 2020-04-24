@@ -29,10 +29,10 @@ const AddComment = (props) => {
                 required = "required"
             ></textarea>
             <button
-                type = {"button"}
+                type = {"submit"}
                 className = {addCommentClasses.btnCommentAdd}
                 aria-label = "Опубликовать комментарий"
-                onClick = {props.addComment}
+                onClick = {() => props.addComment(newAuthorElement.current.value, newTextElement.current.value)}
             >
                 Опубликовать комментарий
             </button>
